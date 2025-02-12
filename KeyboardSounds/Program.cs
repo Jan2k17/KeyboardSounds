@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using Figgle;
 using Gma.System.MouseKeyHook;
 using NAudio.Wave;
-using NAudio.Wave.SampleProviders;
 
 namespace KeyboardSounds
 {
@@ -89,6 +88,7 @@ namespace KeyboardSounds
                     audioFileReader = new AudioFileReader(filePath);
                     waveOutEvent = new WaveOutEvent();
                     waveOutEvent.Init(audioFileReader);
+                    waveOutEvent.Volume = 0.5f;
                     waveOutEvent.Play();
                 }
                 catch (Exception ex)
